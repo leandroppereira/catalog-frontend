@@ -1,6 +1,8 @@
 #!/bin/sh
 set -eu
 
+# BACKEND_URL já vem do ENV definido no Containerfile (via CATALOG_API_URL)
+# Mas deixamos fallback seguro:
 BACKEND_URL="${BACKEND_URL:-}"
 
 cat >/tmp/config.js <<EOF
